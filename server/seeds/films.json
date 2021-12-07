@@ -2,308 +2,120 @@
     "Title": "Zombeavers",
     "Year": "2014",
     "Rated": "R",
-    "Released": "20 Mar 2015",
     "Runtime": "77 min",
     "Genre": "Action, Comedy, Fantasy",
     "Director": "Jordan Rubin",
-    "Writer": "Al Kaplan, Jordan Rubin, Jon Kaplan",
     "Actors": "Rachel Melvin, Cortney Palm, Lexi Atkins",
     "Plot": "A fun weekend turns into madness and horror for a bunch of groupies looking for fun in a beaver infested swamp.",
-    "Language": "English",
-    "Country": "United States",
-    "Awards": "N/A",
     "Poster": "https://m.media-amazon.com/images/M/MV5BNTMzMzc4ODc1M15BMl5BanBnXkFtZTgwMTM0MTgxMTE@._V1_SX300.jpg",
-    "Ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "4.8/10"
-      },
-      {
-        "Source": "Rotten Tomatoes",
-        "Value": "71%"
-      },
-      {
-        "Source": "Metacritic",
-        "Value": "44/100"
-      }
-    ],
-    "Metascore": "44",
     "imdbRating": "4.8",
-    "imdbVotes": "17,821",
     "imdbID": "tt2784512",
-    "Type": "movie",
-    "DVD": "19 May 2015",
     "BoxOffice": "$14,947",
-    "Production": "N/A",
-    "Website": "N/A",
     "Response": "True"
   },
   {
     "Title": "Manos: The Hands of Fate",
     "Year": "1966",
     "Rated": "Not Rated",
-    "Released": "15 Nov 1966",
     "Runtime": "70 min",
     "Genre": "Drama, Horror",
     "Director": "Harold P. Warren",
-    "Writer": "Harold P. Warren",
     "Actors": "Tom Neyman, John Reynolds, Diane Adelson",
     "Plot": "A family gets lost on the road and stumbles upon a hidden, underground, devil-worshiping cult led by the fearsome Master and his servant Torgo.",
-    "Language": "English",
-    "Country": "United States",
-    "Awards": "N/A",
     "Poster": "https://m.media-amazon.com/images/M/MV5BYjIxOWMyMzUtNTMzZC00MThjLTljYjQtZjhlOGQzZTkxOTFkXkEyXkFqcGdeQXVyNjMwMjk0MTQ@._V1_SX300.jpg",
-    "Ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "1.8/10"
-      },
-      {
-        "Source": "Rotten Tomatoes",
-        "Value": "0%"
-      }
-    ],
-    "Metascore": "N/A",
     "imdbRating": "1.8",
-    "imdbVotes": "35,848",
     "imdbID": "tt0060666",
-    "Type": "movie",
-    "DVD": "10 Feb 2015",
     "BoxOffice": "N/A",
-    "Production": "N/A",
-    "Website": "N/A",
     "Response": "True"
   },
   {
     "Title": "The Hottie & the Nottie",
     "Year": "2008",
     "Rated": "PG-13",
-    "Released": "21 Feb 2008",
     "Runtime": "91 min",
     "Genre": "Comedy, Romance",
     "Director": "Tom Putnam",
-    "Writer": "Heidi Ferrer",
     "Actors": "Paris Hilton, Joel David Moore, Christine Lakin",
     "Plot": "A woman agrees to go on a date with a man only if he finds a suitor for her unattractive best friend.",
-    "Language": "English",
-    "Country": "United States",
-    "Awards": "4 wins & 4 nominations",
     "Poster": "https://m.media-amazon.com/images/M/MV5BMTA2NDc1ODUxNDZeQTJeQWpwZ15BbWU3MDQ1MjM1NTE@._V1_SX300.jpg",
-    "Ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "1.9/10"
-      },
-      {
-        "Source": "Rotten Tomatoes",
-        "Value": "6%"
-      },
-      {
-        "Source": "Metacritic",
-        "Value": "7/100"
-      }
-    ],
-    "Metascore": "7",
     "imdbRating": "1.9",
-    "imdbVotes": "38,012",
     "imdbID": "tt0804492",
-    "Type": "movie",
-    "DVD": "06 May 2008",
     "BoxOffice": "$27,696",
-    "Production": "N/A",
-    "Website": "N/A",
     "Response": "True"
   },
   {
     "Title": "Black Sheep",
     "Year": "2006",
     "Rated": "Not Rated",
-    "Released": "29 Mar 2007",
     "Runtime": "87 min",
     "Genre": "Comedy, Horror, Sci-Fi",
     "Director": "Jonathan King",
-    "Writer": "Jonathan King",
     "Actors": "Oliver Driver, Nathan Meister, Tammy Davis",
     "Plot": "An experiment in genetic engineering turns harmless sheep into bloodthirsty killers that terrorize a sprawling New Zealand farm.",
-    "Language": "English",
-    "Country": "New Zealand, South Korea",
-    "Awards": "5 wins & 5 nominations",
     "Poster": "https://m.media-amazon.com/images/M/MV5BNzcwMTA1MjEzMl5BMl5BanBnXkFtZTcwNzE0MzQ0MQ@@._V1_SX300.jpg",
-    "Ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "5.8/10"
-      },
-      {
-        "Source": "Rotten Tomatoes",
-        "Value": "72%"
-      },
-      {
-        "Source": "Metacritic",
-        "Value": "62/100"
-      }
-    ],
-    "Metascore": "62",
     "imdbRating": "5.8",
-    "imdbVotes": "40,148",
     "imdbID": "tt0779982",
-    "Type": "movie",
-    "DVD": "07 Aug 2007",
     "BoxOffice": "$84,283",
-    "Production": "N/A",
-    "Website": "N/A",
     "Response": "True"
   },
   {
     "Title": "Revenge of the Mask 2",
     "Year": "2019",
     "Rated": "N/A",
-    "Released": "15 Dec 2019",
     "Runtime": "N/A",
     "Genre": "Short, Action",
     "Director": "Lance Kawas",
-    "Writer": "Kyle Parker, Dylan Sides",
     "Actors": "Gary Brunner, Dean Cain, Adam DeFilippi",
     "Plot": "The world of Revenge of the Mask 2 follows the events of the Big Head murders. Edge City is now experiencing a period of unintentional peace but not everybody is happy with Big Head's actions. Detectives Kellaway and Doyle uncover th",
-    "Language": "English",
-    "Country": "United States",
-    "Awards": "N/A",
     "Poster": "https://m.media-amazon.com/images/M/MV5BNDFhMDliMWItMGIwNi00MGU4LWFjOTItYTVkMjc2Y2NiNjkxXkEyXkFqcGdeQXVyMjk4MTE5Nzc@._V1_SX300.jpg",
-    "Ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "8.7/10"
-      }
-    ],
-    "Metascore": "N/A",
     "imdbRating": "8.7",
-    "imdbVotes": "52",
     "imdbID": "tt10378328",
-    "Type": "movie",
-    "DVD": "N/A",
     "BoxOffice": "N/A",
-    "Production": "N/A",
-    "Website": "N/A",
     "Response": "True"
   },
   {
     "Title": "House of the Dead",
     "Year": "2003",
     "Rated": "R",
-    "Released": "10 Oct 2003",
     "Runtime": "90 min",
     "Genre": "Action, Adventure, Horror",
     "Director": "Uwe Boll",
-    "Writer": "Mark A. Altman, Dan Bates, Dave Parker",
     "Actors": "Jonathan Cherry, Tyron Leitso, Clint Howard",
     "Plot": "A group of college students travels to a mysterious island to attend a rave, which is soon taken over by bloodthirsty zombies.",
-    "Language": "English",
-    "Country": "Germany, Canada, United States",
-    "Awards": "2 wins",
     "Poster": "https://m.media-amazon.com/images/M/MV5BNzlmNTFlN2QtM2IxZi00NDc0LTgyMTQtNDNjNTBmODQzZDVjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
-    "Ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "2.1/10"
-      },
-      {
-        "Source": "Rotten Tomatoes",
-        "Value": "3%"
-      },
-      {
-        "Source": "Metacritic",
-        "Value": "15/100"
-      }
-    ],
-    "Metascore": "15",
     "imdbRating": "2.1",
-    "imdbVotes": "36,887",
     "imdbID": "tt0317676",
-    "Type": "movie",
-    "DVD": "27 Jan 2004",
     "BoxOffice": "$10,249,719",
-    "Production": "N/A",
-    "Website": "N/A",
     "Response": "True"
   },
   {
     "Title": "Glitter",
     "Year": "2001",
     "Rated": "PG-13",
-    "Released": "21 Sep 2001",
     "Runtime": "104 min",
     "Genre": "Drama, Music, Romance",
     "Director": "Vondie Curtis-Hall",
-    "Writer": "Cheryl L. West, Kate Lanier",
     "Actors": "Mariah Carey, Eric Benét, Max Beesley",
     "Plot": "A young singer dates a disc jockey who helps her get into the music business, but their relationship become complicated as she ascends to super stardom.",
-    "Language": "English",
-    "Country": "United States",
-    "Awards": "3 wins & 10 nominations",
     "Poster": "https://m.media-amazon.com/images/M/MV5BMGJkN2IxNTYtZDE1OS00MWJhLWFhNzItNTZkMjM4OGUzMTE2L2ltYWdlXkEyXkFqcGdeQXVyNTg3MTc4ODY@._V1_SX300.jpg",
-    "Ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "2.3/10"
-      },
-      {
-        "Source": "Rotten Tomatoes",
-        "Value": "6%"
-      },
-      {
-        "Source": "Metacritic",
-        "Value": "14/100"
-      }
-    ],
-    "Metascore": "14",
     "imdbRating": "2.3",
-    "imdbVotes": "23,296",
     "imdbID": "tt0118589",
-    "Type": "movie",
-    "DVD": "15 Jan 2002",
     "BoxOffice": "$4,274,407",
-    "Production": "N/A",
-    "Website": "N/A",
     "Response": "True"
   },
   {
     "Title": "Battlefield Earth",
     "Year": "2000",
     "Rated": "PG-13",
-    "Released": "12 May 2000",
     "Runtime": "118 min",
     "Genre": "Action, Adventure, Sci-Fi",
     "Director": "Roger Christian",
-    "Writer": "Corey Mandell, J.D. Shapiro, L. Ron Hubbard",
     "Actors": "John Travolta, Forest Whitaker, Barry Pepper",
     "Plot": "It's the year 3000 A.D., and the Earth is lost to the alien race of Psychlos. Humanity is enslaved by these gold-thirsty tyrants, who are unaware that their 'man-animals' are about to ignite the rebellion of a lifetime.",
-    "Language": "English",
-    "Country": "United States",
-    "Awards": "19 wins & 3 nominations",
     "Poster": "https://m.media-amazon.com/images/M/MV5BNWQ3ZWNkMzItOTcxNi00MzA5LTkzMTQtZWIyZWJjN2VhNDBkXkEyXkFqcGdeQXVyMjQwMjk0NjI@._V1_SX300.jpg",
-    "Ratings": [
-      {
-        "Source": "Internet Movie Database",
-        "Value": "2.5/10"
-      },
-      {
-        "Source": "Rotten Tomatoes",
-        "Value": "3%"
-      },
-      {
-        "Source": "Metacritic",
-        "Value": "9/100"
-      }
-    ],
-    "Metascore": "9",
     "imdbRating": "2.5",
-    "imdbVotes": "79,032",
     "imdbID": "tt0185183",
-    "Type": "movie",
-    "DVD": "06 May 2008",
     "BoxOffice": "$21,471,685",
-    "Production": "N/A",
-    "Website": "N/A",
     "Response": "True"
   },
   {
