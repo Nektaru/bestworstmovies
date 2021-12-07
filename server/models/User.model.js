@@ -1,20 +1,33 @@
-const { Schema, model } = require("mongoose");
-
-// TODO: Please make sure you edit the user model to whatever makes sense in this case
+const { Schema, model} = require("mongose");
+//Required, fav list, film object with fav and viewed.
 const userSchema = new Schema(
-  {
+    {
     username: {
-      type: String,
-      // unique: true -> Ideally, should be unique, but its up to you
+        type: String,
+        unique: true
+        },
+    password: {
+        type: String,
+        require: true
     },
-    password: String,
-  },
-  {
-    // this second object adds extra properties: `createdAt` and `updatedAt`
-    timestamps: true,
-  }
-);
+    age: Number,
+    films: {
+        fav: mongoose.ObjectId,
+        viewed: ObjectId
+    },
+    role: {
+        require: true,
+        type: String,
+        enum: ['BASIC', 'MODERATOR'],
+        default: 'BASIC'
+        },
+    },
+   {
+   timestamps: true
+   }
+   );
 
-const User = model("User", userSchema);
+   const User = model("User", userSchema)
 
-module.exports = User;
+   module.export = User;
+
