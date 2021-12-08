@@ -3,7 +3,7 @@
     top: 0;
     width: 100%;
     padding: 20px;
-    height: 30px;
+    height: 35px;
     z-index: 1;
 
     transition-timing-function: ease-in;
@@ -14,16 +14,31 @@
     background-color: #111;
 }
 
+.nav__menu {
+    display: flex;
+    color: blanchedalmond;
+    padding-left: 150px;
+}
+
+.nav__stuffs {
+    display: flex;
+}
+
+.nav__stuffs p{
+    padding-left: 30px;
+}
+
+
 .nav__logo {
     position: fixed;
-    left: 0px;
-    width: 80px;
+    left: 20px;
+    width: 100px;
     object-fit: contain;
 }
 
 .nav__avatar {
     position: fixed;
     right: 20px;
-    width: 80px;
+    width: 35px;
     object-fit: contain;
 }
