@@ -1,11 +1,11 @@
 import React from 'react'
 
-function DetailModal() {
+function Signup() {
     return (
         <div>
-             {""}
+            {""}
         </div>
     )
 }
 
-export default DetailModal
+export default Signup
