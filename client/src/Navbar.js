@@ -17,28 +17,28 @@ function Navbar() {
     }, []);
 
     return (
-        <div className={`nav ${show && "nav__black"}`}>
-        <div className="nav__menu">
-        <img 
-            className="nav__logo"
-            src={logo}
-            alt="Badflix Logo"
-        />
-            <div className="nav__stuffs">   
-                <p>Sign up</p>
-                <p>Login</p>
-                <p>Explore</p>
-                <p>Random Movie</p>
+        <nav className={`nav ${show && "nav__black"}`}>
+            <div className="nav__menu">
+                <img 
+                    className="nav__logo"
+                    src={logo}
+                    alt="Badflix Logo"
+                />
+                <div className="nav__stuffs">   
+                    <p>Sign up</p>
+                    <p>Login</p>
+                    <p>Explore</p>
+                    <p>Random Movie</p>
+                </div>
             </div>
-        </div>
-        <div className="nav__more__stuffs">
-        <img 
-            className="nav__avatar"
-            src="https://i.pinimg.com/originals/fb/8e/8a/fb8e8a96fca2f049334f312086a6e2f6.png"
-            alt="Netflix Avatar"
-        />
-        </div>
-        </div>
+            <div className="nav__more__stuffs">
+                <img 
+                    className="nav__avatar"
+                    src="https://i.pinimg.com/originals/fb/8e/8a/fb8e8a96fca2f049334f312086a6e2f6.png"
+                    alt="Netflix Avatar"
+                />
+            </div>
+        </nav>
     )
 }
 
