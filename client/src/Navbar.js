@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.css'
 import logo from './img/badflix-logo.png' 
+import {Link} from 'react-router-dom'
+
 
 function Navbar() {
     const [show, handleShow] = useState(false)
@@ -25,10 +27,10 @@ function Navbar() {
                     alt="Badflix Logo"
                 />
                 <div className="nav__stuffs">   
-                    <p>Sign up</p>
-                    <p>Login</p>
-                    <p>Explore</p>
-                    <p>Random Movie</p>
+                    <Link to="#">Sign up</Link>
+                    <Link to="#">Login</Link>
+                    <Link to="#">Explore</Link>
+                    <Link to="#">Random Movie</Link>
                 </div>
             </div>
             <div className="nav__more__stuffs">

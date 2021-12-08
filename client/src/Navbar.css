@@ -16,7 +16,7 @@
 
 .nav__menu {
     display: flex;
-    color: blanchedalmond;
+    color: white;
     padding-left: 150px;
 }
 
@@ -24,8 +24,11 @@
     display: flex;
 }
 
-.nav__stuffs p{
+.nav__stuffs a{
     padding-left: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
 }
 
 
