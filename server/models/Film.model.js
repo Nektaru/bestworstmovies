@@ -1,9 +1,9 @@
-const { Schema, Film} = require("mongose");
+const { Schema, model} = require("mongoose");
 
 const filmSchema = new Schema(
     {
     title: String,
-    poster: Image,
+    poster: String,
     cast: String,
     rating: String,
     images: String,
@@ -17,5 +17,5 @@ const filmSchema = new Schema(
 
    const Film = model("Film", filmSchema)
 
-   module.export = Film;
+   module.exports = Film;
    

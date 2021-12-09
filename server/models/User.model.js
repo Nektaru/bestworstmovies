@@ -1,4 +1,4 @@
-const { Schema, model} = require("mongose");
+const { Schema, model} = require("mongoose");
 //Required, fav list, film object with fav and viewed.
 const userSchema = new Schema(
     {
@@ -12,8 +12,14 @@ const userSchema = new Schema(
     },
     age: Number,
     films: {
-        fav: mongoose.ObjectId,
-        viewed: ObjectId
+        fav: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Film'
+        }],
+        viewed: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Film'
+        }]
     },
     role: {
         require: true,
@@ -29,5 +35,5 @@ const userSchema = new Schema(
 
    const User = model("User", userSchema)
 
-   module.export = User;
+   module.exports = User;
 
