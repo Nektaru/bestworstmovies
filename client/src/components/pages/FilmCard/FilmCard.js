@@ -12,19 +12,18 @@ function truncate(str, n) {
 const FilmCard = ({ _id, title, overview, vote_average, poster_path, backdrop_path }) => {
 
   return (
-    <Card className="film-card" style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={`${base_url}${poster_path}`} />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>
-            {truncate(overview, 150)}
-        </Card.Text>
-
-        {/* <Link to={`/coaster/${_id}`}>
-          <Button variant="primary">Detalles</Button>
-        </Link> */}
-      </Card.Body>
-    </Card>
+      
+    <div className="card-container">
+        <Card className="film-card">
+        <Card.Img src={`${base_url}${poster_path}`} />
+        <Card.Body>
+            <Card.Title><h2>{title}</h2></Card.Title>
+            <Card.Text>
+                {truncate(overview, 150)}
+            </Card.Text>
+        </Card.Body>
+        </Card>
+    </div>
   )
 }
 

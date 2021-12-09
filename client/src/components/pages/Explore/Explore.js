@@ -1,18 +1,8 @@
 import React, {  useEffect, useState } from "react";
-import { Row, Col, Modal, Button } from 'react-bootstrap'
+import { Row, Col, Modal, Button, Container } from 'react-bootstrap'
 import FilmCard from '../FilmCard/FilmCard'
 import FilmService from "../../../services/film.services";
 
-
-// function Explore() {
-//     return (
-//         <div>
-//             {""}
-//         </div>
-//     )
-// }
-
-// export default Explore
 
 const Explore = () => {
 
@@ -52,17 +42,19 @@ const Explore = () => {
 
         </Modal> */}
 
-        <Row>
-          {this.props.film.map(elm => {
-
-            return (
-              <Col key={elm._id}>
-                <FilmCard  {...elm} />
-              </Col>
-            )
-          })
-          }
-        </Row>
+        <Container fluid>
+          <Row>
+            {films.map(elm => {
+              return (
+                
+                <Col md={3}>
+                  <FilmCard key={elm._id}  {...elm} />
+                </Col>
+              )
+            })
+            }
+          </Row>
+        </Container>
       </div>
     
         )
@@ -70,5 +62,3 @@ const Explore = () => {
 }
 
 export default Explore
-
-{/* <CoasterList refreshCoasters={this.refreshCoasters} coasters={this.state.coasters} /> */}
