@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Row from './Row';
-import Banner from './components/pages/Banner/Banner';
-import requests from './requests';
 import Navbar from './components/layout/Navbar';
 import { Route, Routes, Navigate } from "react-router-dom";
-import DetailModal from './components/DetailModal/DetailModal'
 import Home from './components/Home/Home'
 import Profile from './components/pages/Profile/Profile'
 import Explore from './components/pages/Explore/Explore'

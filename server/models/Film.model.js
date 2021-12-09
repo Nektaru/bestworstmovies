@@ -12,6 +12,7 @@ const filmSchema = new Schema(
     cast: String,
     vote_average: Number,
     vote_count: Number,
+    overview: String,
    },
    {
    timestamps: true
