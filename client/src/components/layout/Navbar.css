@@ -10,21 +10,21 @@
     transition: all 0.5s;
 }
 
-.nav__black {
+.nav-black {
     background-color: #111;
 }
 
-.nav__menu {
+.nav-menu {
     display: flex;
     color: white;
     padding-left: 150px;
 }
 
-.nav__stuffs {
+.nav-left-buttons {
     display: flex;
 }
 
-.nav__stuffs a{
+.nav-left-buttons a{
     padding-left: 30px;
     text-decoration: none;
     color: white;
@@ -32,14 +32,14 @@
 }
 
 
-.nav__logo {
+.nav-logo {
     position: fixed;
     left: 20px;
     width: 100px;
     object-fit: contain;
 }
 
-.nav__avatar {
+.nav-avatar {
     position: fixed;
     top: 20px;
     right: 20px;

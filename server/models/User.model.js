@@ -1,4 +1,4 @@
-const { Schema, model} = require("mongose");
+const { Schema, model} = require("mongoose");
 //Required, fav list, film object with fav and viewed.
 const userSchema = new Schema(
     {
@@ -29,5 +29,5 @@ const userSchema = new Schema(
 
    const User = model("User", userSchema)
 
-   module.export = User;
+   module.exports = User;
 

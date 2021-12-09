@@ -6,4 +6,5 @@ const requests = {
     fetchAwesomeMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=vote_average.asc&include_video=en-US&page=3&vote_count.gte=100`
 }
 
+
 export default requests;
