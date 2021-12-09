@@ -6,6 +6,7 @@ import requests from './requests';
 import Navbar from './components/layout/Navbar';
 import { Route, Routes, Navigate } from "react-router-dom";
 import DetailModal from './components/DetailModal/DetailModal'
+import Home from './components/Home/Home'
 import Profile from './components/pages/Profile/Profile'
 import Explore from './components/pages/Explore/Explore'
 import Login from './components/pages/Auth/Login'
@@ -44,24 +45,20 @@ function App() {
     <div className="App">
       <>
           <Navbar />
-          <DetailModal />
-          <Banner />
-          <Row title="Worst Movies" fetchUrl={requests.fetchWorstMovies} /> 
-          <Row title="Best Movies" fetchUrl={requests.fetchBestMovies} /> 
-          <Row title="Awesome Movies" fetchUrl={requests.fetchAwesomeMovies} />
+         
       </>
-      <Routes key={null}>
-          <Route exact path="/" />
+      <Routes >
+          <Route path="/" element={<Home />} />
           
-          <Route exact path="/explore" render={() => <Explore />} />
+          <Route path="/explore" element={<Explore/>} />
 
           {/* <Route exact path="/profile" render={() => currentUser ? <Profile /> : <Navigate to="/login" />} /> */}
 
-          <Route exact path="/profile" render={() => currentUser ? <Profile /> : <Navigate to="/login" />} />
+          <Route  path="/profile" element={ currentUser ? <Profile /> : <Navigate to="/login" />} />
 
-          <Route exact path="/login" render={() => currentUser ? <Navigate to="/"/> : <Login />} />
+          <Route  path="/login" element={ currentUser ? <Navigate to="/"/> : <Login />} />
 
-          <Route exact path="/sign-up" render={() => currentUser ? <Navigate to="/"/> : <Signup />} />
+          <Route  path="/sign-up" element={ currentUser ? <Navigate to="/"/> : <Signup />} />
 
       </Routes>
     </div>
