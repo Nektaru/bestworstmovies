@@ -3,12 +3,15 @@ const { Schema, model} = require("mongoose");
 const filmSchema = new Schema(
     {
     title: String,
-    poster: String,
+    original_title: String,
+    _id: Number,
+    adult: Boolean,
+    poster_path: String,
+    backdrop_path: String,
+    genre_ids: Number,
     cast: String,
-    rating: String,
-    images: String,
-    trailer: String,
-    pg: Number
+    vote_average: Number,
+    vote_count: Number,
    },
    {
    timestamps: true

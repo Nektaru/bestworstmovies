@@ -8,7 +8,7 @@ router.get("/allFilms", (req, res) => {
     .catch(err => res.json({ err, errMessage: "Películas not found" }))
 })
 
-router.get("/films/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   const { id } = req.params
 
   Film.findById(id)
