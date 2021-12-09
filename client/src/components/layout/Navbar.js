@@ -20,11 +20,13 @@ function Navbar() {
     return (
         <nav className={`nav ${show && "nav-black"}`}>
             <div className="nav-menu">
+                <Link to="/">
                 <img 
                     className="nav-logo"
                     src={logo}
                     alt="Badflix Logo"
                 />
+                </Link>
                 <div className="nav-left-buttons"> 
                     <Link to="/sign-up">Sign up</Link>
                     <Link to="login">Login</Link>

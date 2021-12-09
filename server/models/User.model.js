@@ -12,8 +12,14 @@ const userSchema = new Schema(
     },
     age: Number,
     films: {
-        fav: mongoose.ObjectId,
-        viewed: ObjectId
+        fav: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Film'
+        }],
+        viewed: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Film'
+        }]
     },
     role: {
         require: true,
