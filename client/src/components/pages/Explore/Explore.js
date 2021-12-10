@@ -53,7 +53,7 @@ const Explore = () => {
         </Modal> */}
 
         <Row>
-          {this.props.film.map(elm => {
+          {films.map(elm => {
 
             return (
               <Col key={elm._id}>
