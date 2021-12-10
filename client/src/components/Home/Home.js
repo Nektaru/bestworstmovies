@@ -13,6 +13,7 @@ function Home() {
         <Row title="Worst Movies" fetchUrl={requests.fetchWorstMovies} /> 
         <Row title="Best Movies" fetchUrl={requests.fetchBestMovies} /> 
         <Row title="Awesome Movies" fetchUrl={requests.fetchAwesomeMovies} />
+        <Row title="Actually Good Movies" fetchUrl={requests.fetchActuallyGoodMovies} />
         </>
     )
 }

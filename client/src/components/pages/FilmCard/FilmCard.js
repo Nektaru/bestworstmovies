@@ -12,9 +12,9 @@ function truncate(str, n) {
 const FilmCard = ({ _id, title, overview, vote_average, poster_path, backdrop_path }) => {
 
   return (
-      
+  <div className='card-list'>
     <div className="card-container">
-        <Card className="film-card">
+        <Card className="film-card" id="card">
         <Card.Img src={`${base_url}${poster_path}`} />
         <Card.Body>
             <Card.Title><h2>{title}</h2></Card.Title>
@@ -24,6 +24,7 @@ const FilmCard = ({ _id, title, overview, vote_average, poster_path, backdrop_pa
         </Card.Body>
         </Card>
     </div>
+  </div>  
   )
 }
 
