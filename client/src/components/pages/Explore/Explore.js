@@ -2,16 +2,26 @@ import React, {  useEffect, useState } from "react";
 import { Row, Col, Modal, Button, Container } from 'react-bootstrap'
 import FilmCard from '../FilmCard/FilmCard'
 import FilmService from "../../../services/film.services";
+import DetailModal from "../../DetailModal/DetailModal";
 
 
 const Explore = () => {
 
-    const [films, setFilms] = useState([])
+    const [films, setFilms] = useState([]);
+    const [show, showModal] = useState(false);
 
-    const filmService = new FilmService()
+    const [details, setDetails] = useState({
+      _id: undefined, 
+      title: undefined, 
+      overview: undefined, 
+      vote_average: undefined, 
+      poster_path: undefined, 
+      backdrop_path: undefined
+    })
 
-    useEffect(() => refreshFilms(), [])
+    const filmService = new FilmService();
 
+    useEffect(() => refreshFilms(), []);
 
     const refreshFilms = () => {
 
@@ -21,26 +31,29 @@ const Explore = () => {
         setFilms(films)
       })
       .catch(err => console.log(err))
+  };
+
+  function toggle(data) {
+    setDetails(data);
+    showModal(true);
   }
 
+
     return (
-        <div>
+      <div>
 
-        {/* <Button onClick={this.openModal}>Crea una nueva montaña rusa</Button>
+        {/* <Button onClick={toggle}>CLICK ME</Button> */}
 
-        <Modal
-          show={this.state.showModal}
-          backdrop="static"
-          onHide={this.closeModal}
-        >
+        <Modal show={show} onHide={() => showModal(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Nueva Coaster</Modal.Title>
+            <Modal.Title>{details?.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <NewCoasterForm refreshCoasters={this.props.refreshCoasters} closeModal={this.closeModal} />
+            <DetailModal />
           </Modal.Body>
 
-        </Modal> */}
+        </Modal>
+
 
         <Container fluid>
           <Row>
@@ -48,7 +61,7 @@ const Explore = () => {
               return (
                 
                 <Col md={3}>
-                  <FilmCard key={elm._id}  {...elm} />
+                  <FilmCard key={elm._id} {...elm} toggle={toggle} />
                 </Col>
               )
             })
