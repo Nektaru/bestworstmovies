@@ -1,4 +1,24 @@
+.card-container {
+    padding-top: 5%;
+}
+
 .film-card {
-    background-color: black;
-    color: white;
+    width: 300px;
+}
+
+.card-img {
+    object-fit: contain;
+    width: 100%;
+    max-height: 500px;
+    margin-right: 10px;
+    transition: transform 150ms;
+}
+
+.card-img:hover {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.card-text {
+    padding-top: 5%;
 }
