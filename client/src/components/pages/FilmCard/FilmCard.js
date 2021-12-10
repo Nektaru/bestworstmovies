@@ -9,13 +9,13 @@ function truncate(str, n) {
     return str?.length > n ? str.substr(0, n -1) + "..." : str;
 }
 
-const FilmCard = ({ _id, title, overview, vote_average, poster_path, backdrop_path }) => {
+const FilmCard = ({ _id, title, overview, vote_average, poster_path, backdrop_path, toggle }) => {
 
   return (
   <div className='card-list'>
     <div className="card-container">
-        <Card className="film-card" id="card">
-        <Card.Img src={`${base_url}${poster_path}`} />
+        <Card className="film-card"  id="card">
+        <Card.Img src={`${base_url}${poster_path}`} onClick={() => toggle({ _id, title, overview, vote_average, poster_path, backdrop_path })} />
         <Card.Body>
             <Card.Title><h2>{title}</h2></Card.Title>
             <Card.Text>

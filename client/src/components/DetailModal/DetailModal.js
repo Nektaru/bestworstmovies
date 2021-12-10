@@ -3,7 +3,7 @@ import React from 'react'
 function DetailModal() {
     return (
         <div>
-             {""}
+             {"AAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHH"}
         </div>
     )
 }

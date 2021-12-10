@@ -29,15 +29,6 @@ function App() {
   }
 
   return (
-//     <div className="App">
-//     <Nav />
-//       <Banner />
-//       <Row title="Worst Movies" fetchUrl={requests.fetchWorstMovies} /> 
-//       <Row title="Best Movies" fetchUrl={requests.fetchBestMovies} /> 
-//       <Row title="Awesome Movies" fetchUrl={requests.fetchAwesomeMovies} /> 
-//     </div>
-//   );
-// }
 
     <div className="App">
       <>
@@ -53,9 +44,9 @@ function App() {
 
           <Route  path="/profile" element={ currentUser ? <Profile /> : <Navigate to="/login" />} />
 
-          <Route  path="/login" element={ currentUser ? <Navigate to="/"/> : <Login />} />
+          <Route  path="/login" element={ currentUser ? <Navigate to="/"/> : <Login storeUser={storeUser} />} />
 
-          <Route  path="/sign-up" element={ currentUser ? <Navigate to="/"/> : <Signup />} />
+          <Route  path="/sign-up" element={ currentUser ? <Navigate to="/"/> : <Signup storeUser={storeUser} />} />
 
       </Routes>
     </div>
