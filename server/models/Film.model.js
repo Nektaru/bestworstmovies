@@ -4,7 +4,7 @@ const filmSchema = new Schema(
     {
     title: String,
     original_title: String,
-    _id: Number,
+    id: Number,
     adult: Boolean,
     poster_path: String,
     backdrop_path: String,

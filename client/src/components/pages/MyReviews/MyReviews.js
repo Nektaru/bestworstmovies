@@ -5,7 +5,7 @@ import FilmService from "../../../services/film.services";
 import DetailModal from "../../DetailModal/DetailModal";
 
 
-const Explore = () => {
+const MyReviews = () => {
 
     const [films, setFilms] = useState([]);
     const [show, showModal] = useState(false);
@@ -16,7 +16,8 @@ const Explore = () => {
       overview: undefined, 
       vote_average: undefined, 
       poster_path: undefined, 
-      backdrop_path: undefined
+      backdrop_path: undefined,
+      films: undefined,
     })
 
     const filmService = new FilmService();
@@ -74,4 +75,4 @@ const Explore = () => {
     
 }
 
-export default Explore
+export default MyReviews

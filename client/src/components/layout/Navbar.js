@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import logo from '../../img/badflix-logo.png';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
+import AuthService from "../../services/auth.services";
 
-function Navbar() {
+
+function Navbar({currentUser, storeUser}) {
     const [show, handleShow] = useState(false)
 
     useEffect(()  => {
@@ -17,6 +19,13 @@ function Navbar() {
         }
     }, []);
 
+    const authService = new AuthService();
+
+    // crear una funcion que llamas en el onclick de logout y en la que llames al servicio y al metodo de logout y cuandoe so este hecho usas storeuser para ponerlo en null, por ejemplo
+    // laura(() => {
+
+    // })
+
     return (
         <nav className={`nav ${show && "nav-black"}`}>
             <div className="nav-menu">
@@ -28,12 +37,22 @@ function Navbar() {
                 />
                 </Link>
                 <div className="nav-left-buttons"> 
-                    <Link to="/sign-up">Sign up</Link>
-                    <Link to="login">Login</Link>
-                    <Link to="/explore">Explore</Link>
-                    <Link to="randomMovie">Random Movie</Link>
+                {
+                    currentUser ? 
+                    <>
+                        <Link to="/explore">Explore</Link>
+                        <Link to="/mylist">My List</Link>
+                        <span onClick={authService.logout}>Logout</span>
+                    </>
+                    :
+                    <>
+                        <Link to="/sign-up">Sign up</Link>
+                        <Link to="/login">Login</Link>
+                    </>
+                }
                 </div>
             </div>
+            {currentUser &&
             <div className="nav-right-buttons">
                 <Link to="profile">
                 <img 
@@ -43,6 +62,7 @@ function Navbar() {
                 />
                 </Link>
             </div>
+            }
         </nav>
     )
 }
