@@ -31,7 +31,7 @@ function Navbar() {
                     <Link to="/sign-up">Sign up</Link>
                     <Link to="login">Login</Link>
                     <Link to="/explore">Explore</Link>
-                    <Link to="randomMovie">Random Movie</Link>
+                    <Link to="/RandomMovie">Random Movie</Link>
                 </div>
             </div>
             <div className="nav-right-buttons">

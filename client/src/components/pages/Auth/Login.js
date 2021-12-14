@@ -30,27 +30,25 @@ const Login = () => {
   
     return (
       (
-        <Container>
+
+        <Container id='login-background' >
           <Row>
-            <Col md={{ span: 4, offset: 4 }}>
-              <h2>Login</h2>
-              <hr />
-              <Form onSubmit={handleSubmit}>
+              <Form id='login-container'  onSubmit={handleSubmit}>
+                  <h1 className='login'>Log in</h1>
                 <Form.Group className="mb-3" controlId="email">
                   <Form.Label>Email</Form.Label>
-                  <Form.Control onChange={handleInputChange} value={formData.username} name="username" type="email" placeholder="Enter email" />
+                  <Form.Control id='label-size' onChange={handleInputChange} value={formData.username} name="username" type="email" placeholder="Enter email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="password">
                   <Form.Label>Password</Form.Label>
-                  <Form.Control onChange={handleInputChange} value={formData.password} name="password" type="password" placeholder="Password" />
+                  <Form.Control id='label-size' onChange={handleInputChange} value={formData.password} name="password" type="password" placeholder="Password" />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
                   Submit
                 </Button>
               </Form>
-            </Col>
           </Row>
         </Container>)
     )

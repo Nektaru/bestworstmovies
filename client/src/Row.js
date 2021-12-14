@@ -47,11 +47,11 @@ function Row({ title, fetchUrl }) {
 
         <>
         <Modal show={show} onHide={() => showModal(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title>{movie.title}</Modal.Title>
+          <Modal.Header closeButton id='modal-title'>
+            <Modal.Title id="modal-title">{details.title}</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            <DetailModal />
+          <Modal.Body id='modal-body'>
+            <DetailModal details={details}/>
           </Modal.Body>
 
         </Modal>
@@ -65,7 +65,7 @@ function Row({ title, fetchUrl }) {
                 {movies.map(movie => (
                     <>
                     <img key={movie.id} className="row_poster" src= {`${base_url}${movie.poster_path}`} alt={movie.name}
-                    onClick={() => toggle()}
+                    onClick={() => toggle(movie)}
                      />
                     </>
                 ))}

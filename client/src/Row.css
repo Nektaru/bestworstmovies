@@ -26,3 +26,24 @@
     transform: scale(1.08);
     opacity: 1;
 }
+
+#modal-title {
+    color: blanchedalmond;
+    background-color: black;
+    width: 48vw;
+    justify-content: space-around;
+}
+
+#modal-header {
+    background-color: black;
+    border: none;
+    width: 48vw;
+}
+
+#modal-body {
+    background-color: black;
+}
+
+.modal-content {
+    width: 48vw;
+}
