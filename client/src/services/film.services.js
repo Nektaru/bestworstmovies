@@ -13,4 +13,4 @@ class FilmService {
   createReview = (filmData) => this.app.post("/newReview", filmData)
 }
 
-export default FilmService
+export default FilmService;

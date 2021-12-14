@@ -10,3 +10,5 @@ module.exports = (req, res, next) => {
   }
   next();
 };
+
+export default exports;

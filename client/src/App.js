@@ -8,6 +8,8 @@ import Explore from './components/pages/Explore/Explore'
 import Login from './components/pages/Auth/Login'
 import Signup from './components/pages/Auth/Signup'
 import AuthService from './services/auth.services';
+import MyList from "./components/pages/MyList/MyList"
+import MyReviews from "./components/pages/MyReviews/MyReviews"
 
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
       .then(response => storeUser(response.data))
       .catch(err => storeUser(null))
 
-    }, [])
+    })
 
   const storeUser = (user) => {
     setCurrentUser(user)
@@ -32,7 +34,7 @@ function App() {
 
     <div className="App">
       <>
-          <Navbar />
+          <Navbar currentUser={currentUser} storeUser={storeUser}/>
          
       </>
       <Routes >
@@ -47,6 +49,10 @@ function App() {
           <Route  path="/login" element={ currentUser ? <Navigate to="/"/> : <Login storeUser={storeUser} />} />
 
           <Route  path="/sign-up" element={ currentUser ? <Navigate to="/"/> : <Signup storeUser={storeUser} />} />
+
+          <Route path="/mylist" element={ currentUser ? <MyList /> : <Login storedUser={storeUser} />} />
+
+          <Route path="/myreviews" element={ currentUser ? <MyReviews /> : <Login storedUser={storeUser} />} />
 
       </Routes>
     </div>

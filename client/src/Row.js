@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from './axios';
-import { Col, Modal, Button, Container } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import './Row.css';
 import DetailModal from './components/DetailModal/DetailModal';
 import FilmService from "./services/film.services";
@@ -57,7 +57,7 @@ function Row({ title, fetchUrl }) {
         </Modal>
 
         <div className="row">
-
+        filmService
             <h2>{title}</h2>
 
             <div className="row_posters">
