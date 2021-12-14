@@ -1,5 +1,6 @@
 const router = require("express").Router()
 const Review = require("../models/Review.model")
+const Film = require("../models/Film.model")
 
 
 router.get("/allReviews", (req, res) => {
@@ -11,9 +12,15 @@ router.get("/allReviews", (req, res) => {
 router.get("/allMovieReviews/:id", (req, res) => {
     const {id} = req.params
 
-    Review.find({film:id})
-      .then(allMovieReviews => res.json(allMovieReviews))
-      .catch(err => res.json({ err, errMessage: "Review not found" }))
+    Film.findOne({id})
+      .then(film => {
+
+        Review.find({film: film._id})
+          .then(allMovieReviews => res.json(allMovieReviews))
+          .catch(err => res.json({ err, errMessage: "Reviews not found" }))
+      })
+      .catch(err => res.json({ err, errMessage: "Film not found" }))
+    
 });
 
 router.get("/allUserReviews/:id", (req, res) => {
@@ -36,13 +43,20 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/newReview", (req, res) => {
-  const { userId, film, comment } = req.body
+  const { userId, title, film, comment } = req.body
 
-  Review.create({ userId, film, comment })
+  Review.create({ userId, title, film, comment })
     .then(createdReview => {res.json(createdReview)})
     .catch(err => console.log({err, errMEssage: "Can't create"}))
 });
 
+router.delete("/deleteReviews/:id", (req, res) => {
+  const { id } = req.params
+
+  Review.findByIdAndDelete(id)
+    .then(deletedReviews => res.json({ deletedReviews }))
+    .catch(err => res.json({ err, errMessage: "Can't delete film" }))
+})
 
 //SOLO PARA MODERADORES
 
@@ -55,12 +69,5 @@ router.post("/newReview", (req, res) => {
     .catch(err => res.json({ err, errMessage: "Problema editando Review" }))
 }) */
 
-router.delete("/deleteReviews/:id", (req, res) => {
-  const { id } = req.params
-
-  Review.findByIdAndDelete(id)
-    .then(deletedReviews => res.json({ deletedReviews }))
-    .catch(err => res.json({ err, errMessage: "Can't delete film" }))
-})
 
 module.exports = router

@@ -24,7 +24,7 @@ function App() {
       .then(response => storeUser(response.data))
       .catch(err => storeUser(null))
 
-    })
+    }, [])
 
   const storeUser = (user) => {
     setCurrentUser(user)
@@ -50,9 +50,9 @@ function App() {
 
           <Route  path="/sign-up" element={ currentUser ? <Navigate to="/"/> : <Signup storeUser={storeUser} />} />
 
-          <Route path="/mylist" element={ currentUser ? <MyList /> : <Login storedUser={storeUser} />} />
+          <Route path="/mylist" element={ currentUser ? <MyList currentUser={currentUser}/> : <Login storedUser={storeUser} />} />
 
-          <Route path="/myreviews" element={ currentUser ? <MyReviews /> : <Login storedUser={storeUser} />} />
+          <Route path="/myreviews" element={ currentUser ? <MyReviews currentUser={currentUser} /> : <Login storedUser={storeUser} />} />
 
       </Routes>
     </div>

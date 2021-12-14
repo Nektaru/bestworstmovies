@@ -3,7 +3,7 @@ import axios from './axios';
 import { Modal } from 'react-bootstrap'
 import './Row.css';
 import DetailModal from './components/DetailModal/DetailModal';
-import FilmService from "./services/film.services";
+// import FilmService from "./services/film.services";
 
 
 const base_url = "https://image.tmdb.org/t/p/original/"
@@ -14,7 +14,6 @@ function Row({ title, fetchUrl }) {
     const [show, showModal] = useState(false);
 
     const [details, setDetails] = useState({
-
       _id: undefined, 
       title: undefined, 
       overview: undefined, 
@@ -35,7 +34,7 @@ function Row({ title, fetchUrl }) {
  
     }, [fetchUrl]);
 
-    const filmService = new FilmService();
+    // const filmService = new FilmService();
 
     function toggle(data) {
         setDetails(data);
