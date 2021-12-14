@@ -25,9 +25,13 @@
 .row_poster:hover {
     transform: scale(1.08);
     opacity: 1;
+    cursor: pointer;
 }
-
- #modal-title {
+.modal-dialog{
+    max-width: 100vw !important;
+    height: 100vh;
+}
+  #modal-title {
     color: white;
     background-color: black;
     width: 43vw;
@@ -51,10 +55,12 @@
     padding-right: 135px;
     justify-content: flex-end;
     padding-left: 808px;
-}
+    padding-top: 80px;
+} */
 
 #modal-opts {
     padding: 0.5rem auto !important;
+    
 }
 
 .fade.modal.show .modal-dialog{
@@ -65,4 +71,9 @@
 .modal-dialog {
     margin: 3.75rem 30rem !important;
     background-color: black !important;
+}
+
+.modal-combat{
+    height: 1500px;
+    overflow-y: scroll;
 }

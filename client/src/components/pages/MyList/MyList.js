@@ -4,6 +4,7 @@ import FilmCard from '../FilmCard/FilmCard'
 import UserService from "../../../services/user.services";
 import DetailModal from "../../DetailModal/DetailModal";
 import "./MyList.css"
+import '../Explore/Explore.css'
 
 
 const MyList = (props) => {
@@ -46,10 +47,10 @@ const MyList = (props) => {
     return (
       <div>
         <Modal show={show} onHide={() => showModal(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title>{details?.title}</Modal.Title>
+          <Modal.Header closeButton  id="modal-header">
+            <Modal.Title id="modal-title">{details?.title}</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body id="modal-body">
             <DetailModal details={details} />
           </Modal.Body>
         </Modal>

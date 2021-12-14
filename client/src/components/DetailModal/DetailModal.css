@@ -82,10 +82,9 @@
     
 }
 
-/* text-align: center;
-    flex-direction: column;
-    padding-left: 230px;
-    width: 683px;
-    display: flex;
-    background-color: black;
-    align-items: center; */
+#modal-combat{
+    scroll-behavior: auto;
+    overflow-y: scroll;
+    width: 2000px;
+    height: auto;
+}
