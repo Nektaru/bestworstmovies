@@ -24,6 +24,7 @@ function DetailModal(props) {
 
 
     return (
+
         <div className='modal-background'>
             <div className='modal-container'>
 
@@ -60,6 +61,7 @@ function DetailModal(props) {
                     </div>
             </div>
         </div>
+    </div>
     )
 }
 
