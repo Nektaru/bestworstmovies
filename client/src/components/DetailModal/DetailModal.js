@@ -13,7 +13,7 @@ function DetailModal(props) {
                     <div id='modal-img'>
                         <img className='image' src={`${base_url}${props.details.backdrop_path}`}/>
                     </div>
-
+                <div id='everything'>
                     <div className='modal-buttons'>
                         <button>
                             Mark as viewed
@@ -24,14 +24,14 @@ function DetailModal(props) {
                     </div>
                     
                     <div id='modal-description'>
-                        <p>{props.details.overview}</p>
+                        <p id='description'>{props.details.overview}</p>
                     </div>
                     
                     <div className='modal-vote'>
                         <h1>{props.details.vote_average}</h1>
                     </div>
                     <div className='modal-comments'>
-                    
+                </div>
                     </div>
             </div>
         </div>

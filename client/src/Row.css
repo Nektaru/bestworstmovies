@@ -27,23 +27,42 @@
     opacity: 1;
 }
 
-#modal-title {
-    color: blanchedalmond;
+ #modal-title {
+    color: white;
     background-color: black;
-    width: 48vw;
+    width: 43vw;
     justify-content: space-around;
 }
 
 #modal-header {
     background-color: black;
     border: none;
-    width: 48vw;
+    width: 50vw;
 }
 
 #modal-body {
     background-color: black;
+    width: 50vw;
 }
 
-.modal-content {
-    width: 48vw;
+
+.modal-background {
+    width: 50vw;
+    padding-right: 135px;
+    justify-content: flex-end;
+    padding-left: 808px;
+}
+
+#modal-opts {
+    padding: 0.5rem auto !important;
+}
+
+.fade.modal.show .modal-dialog{
+    padding: 0.5rem auto !important;
+
+}
+
+.modal-dialog {
+    margin: 3.75rem 30rem !important;
+    background-color: black !important;
 }

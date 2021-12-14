@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Container, Form, Button, Row, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router'
 import AuthService from '../../../services/auth.services'
+import './Login.css'
 
 const authService = new AuthService()
 
@@ -31,12 +32,12 @@ const Login = () => {
     return (
       (
 
-        <Container id='login-background' >
+        <Container id='login-background'>
           <Row>
-              <Form id='login-container'  onSubmit={handleSubmit}>
+              <Form id='login-container' onSubmit={handleSubmit}>
                   <h1 className='login'>Log in</h1>
                 <Form.Group className="mb-3" controlId="email">
-                  <Form.Label>Email</Form.Label>
+                  <Form.Label>Email address</Form.Label>
                   <Form.Control id='label-size' onChange={handleInputChange} value={formData.username} name="username" type="email" placeholder="Enter email" />
                 </Form.Group>
 

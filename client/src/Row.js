@@ -46,8 +46,9 @@ function Row({ title, fetchUrl }) {
     return (
 
         <>
+        <div id="modal-opts">
         <Modal show={show} onHide={() => showModal(false)}>
-          <Modal.Header closeButton id='modal-title'>
+          <Modal.Header closeButton id='modal-header'>
             <Modal.Title id="modal-title">{details.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body id='modal-body'>
@@ -55,9 +56,9 @@ function Row({ title, fetchUrl }) {
           </Modal.Body>
 
         </Modal>
+        </div>
 
         <div className="row">
-        filmService
             <h2>{title}</h2>
 
             <div className="row_posters">
