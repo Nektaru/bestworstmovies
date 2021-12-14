@@ -44,12 +44,12 @@ router.get("/:id", (req, res) => {
 //     .catch(err => console.log({err, errMEssage: "Can't create a viewed"}))
 // });
 
-router.put("/viewed", (req, res) => {
-//   const { id } = req.params
-  const { userId, film } = req.body
-  console.log(req.body)
+router.put("/viewed/:id", (req, res) => {
+    const { id } = req.params
+    const { film } = req.body
+    console.log(req.body)
 
-  User.findByIdAndUpdate({ userId, $push: {"films.viewed": film} })
+  User.findByIdAndUpdate( id, { $push: {"films.viewed": film} })
     .then(updatedUserViewed => res.json(updatedUserViewed))
     .catch(err => res.json({ err, errMessage: "Can't watch this" }))
 })
