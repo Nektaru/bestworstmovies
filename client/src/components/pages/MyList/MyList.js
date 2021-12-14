@@ -1,11 +1,12 @@
 import React, {  useEffect, useState } from "react";
 import { Row, Col, Modal, Container } from 'react-bootstrap'
 import FilmCard from '../FilmCard/FilmCard'
-import FilmService from "../../../services/film.services";
+import UserService from "../../../services/user.services";
 import DetailModal from "../../DetailModal/DetailModal";
+import "./MyList.css"
 
 
-const MyList = () => {
+const MyList = (props) => {
 
     const [films, setFilms] = useState([]);
     const [show, showModal] = useState(false);
@@ -20,15 +21,17 @@ const MyList = () => {
       films: undefined,
     })
 
-    const filmService = new FilmService();
+    const userService = new UserService();
 
-    useEffect(() => refreshFilms());
+    useEffect(() => refreshFilms(), []);
 
     const refreshFilms = () => {
 
-    filmService.getAllFilms()
+      //TODO pasar ID de usuario a getAllViewed
+    userService.getAllViewed(props.currentUser._id)
       .then(response => {
         const films = response.data
+        // console.log('>>>>>>>>>>>', films)
         setFilms(films)
       })
       .catch(err => console.log(err))
@@ -42,23 +45,19 @@ const MyList = () => {
 
     return (
       <div>
-
-        {/* <Button onClick={toggle}>CLICK ME</Button> */}
-
         <Modal show={show} onHide={() => showModal(false)}>
           <Modal.Header closeButton>
             <Modal.Title>{details?.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <DetailModal />
+            <DetailModal details={details} />
           </Modal.Body>
-
         </Modal>
-
 
         <Container fluid>
           <Row>
-            {films.map(elm => {
+            {films.length > 0 &&
+              films.map(elm => {
               return (
                 
                 <Col md={3}>

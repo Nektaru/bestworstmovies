@@ -5,7 +5,7 @@ import FilmService from "../../../services/film.services";
 import DetailModal from "../../DetailModal/DetailModal";
 import './Explore.css'
 
-const base_url = "https://image.tmdb.org/t/p/original/"
+// const base_url = "https://image.tmdb.org/t/p/original/"
 
 const Explore = () => {
 
@@ -23,15 +23,15 @@ const Explore = () => {
 
     const filmService = new FilmService();
 
-    useEffect(() => refreshFilms());
+  useEffect(() => refreshFilms(), []);
 
-    const refreshFilms = () => {
+  const refreshFilms = () => {
 
     filmService.getAllFilms()
       .then(response => {
         const films = response.data
         setFilms(films)
-})
+      })
       .catch(err => console.log(err))
   };
 

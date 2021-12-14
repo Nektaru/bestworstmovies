@@ -19,11 +19,11 @@ router.get("/allViewed", (req, res) => {
 router.get("/allViewed/:id", (req, res) => {
     const {id} = req.params
 
-    User.find({userId:id})
-        .populate("film")
-        .then(allUserViewed => {
-            console.log(allUserViewed)
-            res.json(allUserViewed)})
+    User.findById(id)
+        .populate("films.viewed")
+        .then(user => {
+            const viewedFilms = user.films.viewed
+            res.json(viewedFilms)})
         .catch(err => res.json({ err, errMessage: "Viewed films not found" }))
 });
 
@@ -52,6 +52,16 @@ router.put("/viewed/:id", (req, res) => {
   User.findByIdAndUpdate( id, { $push: {"films.viewed": film} })
     .then(updatedUserViewed => res.json(updatedUserViewed))
     .catch(err => res.json({ err, errMessage: "Can't watch this" }))
+})
+
+router.put("/remove-viewed/:id", (req, res) => {
+  const { id } = req.params
+  const { film } = req.body
+  console.log(req.body)
+
+User.findByIdAndUpdate( id, { $pull: {"films.viewed": film} })
+  .then(updatedUserViewed => res.json(updatedUserViewed))
+  .catch(err => res.json({ err, errMessage: "Can't watch this" }))
 })
 
 router.delete("/deleteUser/:id", (req, res) => {

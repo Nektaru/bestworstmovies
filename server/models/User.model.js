@@ -19,7 +19,8 @@ const userSchema = new Schema(
         }],
         viewed: [{
             type: Schema.Types.ObjectId,
-            ref: 'Film'
+            ref: 'Film',
+            unique: true,
         }]
     },
     role: {
