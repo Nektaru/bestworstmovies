@@ -1,9 +1,6 @@
 .modal-title {
     background-color: black;
 }
-.photo-background {
-    background-color: blue;
-}
 
 #modal-header {
     background-color: black;
@@ -16,7 +13,7 @@
 #modal-title {
     color: white;
     background-color: black;
-    width: 48vw;
-    justify-content: space-around;
+    width: 100%;
+    text-align: center;
 }
 

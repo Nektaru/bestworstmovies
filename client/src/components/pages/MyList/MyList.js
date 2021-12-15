@@ -32,7 +32,7 @@ const MyList = (props) => {
     userService.getAllViewed(props.currentUser._id)
       .then(response => {
         const films = response.data
-        // console.log('>>>>>>>>>>>', films)
+        console.log('>>>>>>>>>>>', films)
         setFilms(films)
       })
       .catch(err => console.log(err))
