@@ -1,4 +1,4 @@
-.modal-background {
+/* .modal-background {
     width: 49vw;
     height: 38vw;
     background-color: black;
@@ -34,16 +34,6 @@
     height: 20vw;
 }
 
-.image {
-    width: 110%;
-    height: 110%;
-    padding-left: 80px;
-    background-color: black;
-    padding-bottom: 80px;
-    margin-left: 58px;
-    margin-top: 50px;
-    object-fit: cover;
-}
 
 #modal-img {
     width: 800px;
@@ -87,4 +77,15 @@
     overflow-y: scroll;
     width: 2000px;
     height: auto;
+} */
+.image {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    object-fit: cover;
+}
+
+.p {
+    color: white;
+    justify-content: center;
 }
