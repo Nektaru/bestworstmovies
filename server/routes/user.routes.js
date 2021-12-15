@@ -42,15 +42,19 @@ User.findOneAndUpdate( id, userData, {new:true} )
   .catch(err => res.json({ err, errMessage: "Couldn't update user" }))
 })
 
-
-router.put("/viewed/:id", (req, res) => {
-    const { id } = req.params
+// TODO termina esta ruta para buscar por id e insertar el viewed al usuario 
+router.put("/viewed", (req, res) => {
+    const  id  = req.session.currentUser._id;
     const { film } = req.body
+
+  User.findOne({id: filmApiId})
+  .then(film => {
 
   User.findByIdAndUpdate( id, { $push: {"films.viewed": film} })
     .then(updatedUserViewed => res.json(updatedUserViewed))
     .catch(err => res.json({ err, errMessage: "Can't watch this" }))
-})
+  })
+});
 
 router.put("/remove-viewed/:id", (req, res) => {
   const { id } = req.params

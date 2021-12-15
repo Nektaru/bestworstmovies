@@ -1,5 +1,5 @@
 const { Schema, model} = require("mongoose");
-//Required, fav list, film object with fav and viewed.
+
 const userSchema = new Schema(
     {
     username: {
