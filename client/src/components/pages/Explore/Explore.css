@@ -1,22 +1,11 @@
 .modal-title {
     background-color: black;
 }
-.photo-background {
-    background-color: blue;
-}
 
 #modal-header {
     background-color: black;
     border: none;
 }
 
-#modal-body {
-    background-color: black;
-}
-#modal-title {
-    color: white;
-    background-color: black;
-    width: 48vw;
-    justify-content: space-around;
-}
+
 

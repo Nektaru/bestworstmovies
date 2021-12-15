@@ -42,7 +42,7 @@ function DetailModal(props) {
                     </div>
                     
                     <div className='modal-vote'>
-                        <h1>{props.details.vote_average}</h1>
+                        <h1>Rating: {props.details.vote_average}</h1>
                     </div>
                     <div className='modal-comments'>
                         {reviews.length > 0 &&

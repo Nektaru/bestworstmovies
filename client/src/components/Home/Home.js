@@ -10,9 +10,11 @@ function Home() {
         <>
         <Banner />
         <Row title="Worst Movies" fetchUrl={requests.fetchWorstMovies} /> 
-        <Row title="Best Movies" fetchUrl={requests.fetchBestMovies} /> 
-        <Row title="Awesome Movies" fetchUrl={requests.fetchAwesomeMovies} />
-        <Row title="Actually Good Movies" fetchUrl={requests.fetchActuallyGoodMovies} />
+        <Row title="Terrible Movies" fetchUrl={requests.fetchTerribleMovies} /> 
+        <Row title="Really Bad Movies" fetchUrl={requests.fetchReallyBadMovies} />
+        <Row title="Bad Movies" fetchUrl={requests.fetchBadMovies} />
+        <Row title="Still Very Bad Movies" fetchUrl={requests.fetchStillVeryBadMovies} />
+        <Row title="More Bad Movies" fetchUrl={requests.fetchMoreBadMovies} />
         </>
     )
 }
