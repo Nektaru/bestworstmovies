@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './DetailModal.css';
 import ReviewService from "../../services/review.services";
+import UserService from "../../services/user.services";
 import { Form, Button } from 'react-bootstrap';
 
 
@@ -8,6 +9,7 @@ const base_url = "https://image.tmdb.org/t/p/original/"
 
 const DetailModal = (props) => {
 
+    const userService = new UserService()
     const reviewService = new ReviewService();
     const [reviews, setReviews] = useState([]);
     const [show, showForm] = useState(false);
@@ -31,7 +33,6 @@ const DetailModal = (props) => {
 
     // encuentra los reviews que se van a mostrar
     const getAllMovieReviews = () => {
-
         reviewService.getAllMovieReviews(props.details.id)
           .then(response => {
             const reviews = response.data
@@ -41,8 +42,13 @@ const DetailModal = (props) => {
       };
 
     // abre el form para hacer nuevo review
-    function toggleForm(data) { 
-        //showForm(true) 
+    const toggleForm = () => { 
+        showForm(!show) 
+    };
+
+    const addToList = () => {
+        userService.createViewed(formData.filmApiId)
+        // console.log('>>>>>',formData)
     };
 
     const handleInputChange = (e) => {
@@ -65,12 +71,12 @@ const DetailModal = (props) => {
                     </div>
                 <div id='everything'>
                     <div className='modal-buttons'>
-                        <button>
+                        <Button onClick={addToList}>
                             Add to list
-                        </button>
-                        <button onClick={() => toggleForm()}>
+                        </Button>
+                        <Button onClick={toggleForm}>
                             Leave Review
-                        </button>
+                        </Button>
                     </div>
                     
                     <div id='modal-description'>
@@ -81,7 +87,9 @@ const DetailModal = (props) => {
                         <h1>Rating: {props.details.vote_average}</h1>
                     </div>
 
-                    <Form id='review-form' onSubmit={handleSubmit} show={show} onHide={() => showForm(false)}>
+                    { show &&
+                        
+                    <Form id='review-form' onSubmit={handleSubmit}>
                         <h1 className='review' >Review</h1>
 
                     <Form.Group className="mb-3" controlId="formUsername">
@@ -96,7 +104,7 @@ const DetailModal = (props) => {
                 
               <Button type="submit">Submit</Button>
               
-            </Form>
+            </Form>}
 
                     <div className='modal-comments'>
                         {reviews.length > 0 &&

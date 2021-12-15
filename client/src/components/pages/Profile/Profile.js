@@ -47,7 +47,6 @@ const Profile = (props) => {
     return (
 
       <Container>
-        <h1>holi</h1>
         <Row>
           {/* { this.state.saved && <p>Saved <button onClick={() => this.setState({saved: false})}>Stay</button> <Link to="/">Home</Link></p> } */}
             <Form id='profile-container' onSubmit={handleSubmit}>

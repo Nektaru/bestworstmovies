@@ -10,7 +10,7 @@ class UserServices {
   }
 
   getAllViewed = (id) => this.app.get(`/allViewed/${id}`)
-  createViewed = (id, viewedData) => this.app.put(`/viewed/${id}`, viewedData)
+  createViewed = (viewedData) => this.app.put(`/viewed`, viewedData)
   findUser = (id) => this.app.get(`/${id}`)
   editUser = (id, userData) => this.app.put(`/updateuser/${id}`, userData)
 

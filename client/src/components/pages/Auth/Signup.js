@@ -36,9 +36,9 @@ const Signup = () => {
       <Row>
         <Form id='signup-container' onSubmit={handleSubmit}>
             <h1 className='sign-up' >Sign up</h1>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label >Email address</Form.Label>
-              <Form.Control id='label-size' name="username" value={formData.username} onChange={handleInputChange} type="email" placeholder="Enter email" />
+            <Form.Group className="mb-3" controlId="formBasicUsername">
+              <Form.Label >Usernam</Form.Label>
+              <Form.Control id='label-size' name="username" value={formData.username} onChange={handleInputChange} type="username" placeholder="Enter Username" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
