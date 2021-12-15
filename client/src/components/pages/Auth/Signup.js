@@ -39,12 +39,12 @@ const Signup = () => {
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label >Email address</Form.Label>
               <Form.Control id='label-size' name="username" value={formData.username} onChange={handleInputChange} type="email" placeholder="Enter email" />
-              </Form.Group>
+            </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label >Password</Form.Label>
-          <Form.Control id='label-size' name="password" value={formData.password} onChange={handleInputChange} type="password" placeholder="Password" />
-        </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label >Password</Form.Label>
+              <Form.Control id='label-size' name="password" value={formData.password} onChange={handleInputChange} type="password" placeholder="Password" />
+            </Form.Group>
         <Button variant="primary" type="submit">
         Submit
       </Button>

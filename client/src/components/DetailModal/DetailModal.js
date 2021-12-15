@@ -24,7 +24,6 @@ function DetailModal(props) {
 
 
     return (
-      <div id="modal-combat">
         <div className='modal-background'>
             <div className='modal-container'>
 
@@ -62,7 +61,6 @@ function DetailModal(props) {
                  </div>
             </div>
         </div>
-      </div>  
     )
 }
 

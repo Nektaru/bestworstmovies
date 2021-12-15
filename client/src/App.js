@@ -44,7 +44,7 @@ function App() {
 
           {/* <Route exact path="/profile" render={() => currentUser ? <Profile /> : <Navigate to="/login" />} /> */}
 
-          <Route  path="/profile" element={ currentUser ? <Profile /> : <Navigate to="/login" />} />
+          <Route  path="/profile" element={ currentUser ? <Profile currentUser={currentUser} /> : <Navigate to="/login" />} />
 
           <Route  path="/login" element={ currentUser ? <Navigate to="/"/> : <Login storeUser={storeUser} />} />
 

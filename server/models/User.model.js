@@ -11,7 +11,13 @@ const userSchema = new Schema(
         type: String,
         require: true
     },
+
     age: Number,
+
+    firstname: String,
+
+    lastname: String,
+
     films: {
         fav: [{
             type: Schema.Types.ObjectId,
