@@ -43,11 +43,17 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/newReview", (req, res) => {
-  const { userId, title, film, comment } = req.body
+  const { title, filmApiId, comment } = req.body
+  const userId = req.session.currentUser._id
 
-  Review.create({ userId, title, film, comment })
-    .then(createdReview => {res.json(createdReview)})
-    .catch(err => console.log({err, errMEssage: "Can't create"}))
+  Film.findOne({id: filmApiId})
+      .then(film => {
+
+        Review.create({ userId, title, film: film._id, comment })
+          .then(createdReview => {res.json(createdReview)})
+          .catch(err => console.log({err, errMEssage: "Can't create"}))
+      })
+      .catch(err => res.json({ err, errMessage: "Film not found" }))
 });
 
 router.delete("/deleteReviews/:id", (req, res) => {
@@ -57,17 +63,6 @@ router.delete("/deleteReviews/:id", (req, res) => {
     .then(deletedReviews => res.json({ deletedReviews }))
     .catch(err => res.json({ err, errMessage: "Can't delete film" }))
 })
-
-//SOLO PARA MODERADORES
-
-/* router.put(  "/editFilm/:id", (req, res) => {
-  const { id } = req.params
-  const { title, poster, cast, rating, images, trailer } = req.body
-
-  Review.findByIdAndUpdate(id, { title, poster, cast, rating, images, trailer }, { new: true })
-    .then(updatedFilm => res.json(updatedFilm))
-    .catch(err => res.json({ err, errMessage: "Problema editando Review" }))
-}) */
 
 
 module.exports = router

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Form, Row, Col, Container, Button} from "react-bootstrap";
+import { Form, Row, Container, Button} from "react-bootstrap";
 import AuthServices from "../../../services/auth.services"
 import UserServices from "../../../services/user.services"
 import './Profile.css';
@@ -19,7 +19,7 @@ const ProfileUserData = (props) => {
 
     useEffect(() => {
         userServices.editUser(props._id, userData)
-    }, [setUserData, userData])
+    }, [setUserData, userData]);
 
     return [userData, setUserData];
 };

@@ -14,12 +14,12 @@ function Row({ title, fetchUrl }) {
     const [show, showModal] = useState(false);
 
     const [details, setDetails] = useState({
-      _id: undefined, 
-      title: undefined, 
-      overview: undefined, 
-      vote_average: undefined, 
-      poster_path: undefined, 
-      backdrop_path: undefined
+      // _id: undefined, 
+      // title: undefined, 
+      // overview: undefined, 
+      // vote_average: undefined, 
+      // poster_path: undefined, 
+      // backdrop_path: undefined
     })
 
     useEffect(() => {
@@ -33,8 +33,6 @@ function Row({ title, fetchUrl }) {
         fetchData();
  
     }, [fetchUrl]);
-
-    // const filmService = new FilmService();
 
     function toggle(data) {
         setDetails(data);

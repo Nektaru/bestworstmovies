@@ -1,25 +1,58 @@
 import React, {useEffect, useState} from 'react';
 import './DetailModal.css';
 import ReviewService from "../../services/review.services";
+import { Form, Button } from 'react-bootstrap';
 
 
 const base_url = "https://image.tmdb.org/t/p/original/"
 
-function DetailModal(props) {
+const DetailModal = (props) => {
 
     const reviewService = new ReviewService();
-
     const [reviews, setReviews] = useState([]);
+    const [show, showForm] = useState(false);
+    const [formData, setFormData] = useState({
+        comment: "",
+        title: "",
+        filmApiId: props.details.id
+    });
 
-    useEffect(() => refreshFilm());
+    useEffect(() => getAllMovieReviews(), []);
 
-    const refreshFilm = () => {
+    const addReview = () => {
+    
+        reviewService
+            .createReview(formData)
+            .then(response => {
+                getAllMovieReviews()
+            })
+            .catch(err => console.log(err))
+    }
+
+    // encuentra los reviews que se van a mostrar
+    const getAllMovieReviews = () => {
+
         reviewService.getAllMovieReviews(props.details.id)
           .then(response => {
             const reviews = response.data
             setReviews(reviews)
     })
           .catch(err => console.log(err))
+      };
+
+    // abre el form para hacer nuevo review
+    function toggleForm(data) { 
+        //showForm(true) 
+    };
+
+    const handleInputChange = (e) => {
+        let { name, value } = e.currentTarget
+        setFormData({ ...formData, [name]: value })
+      }
+    
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        addReview()
       };
 
 
@@ -35,6 +68,9 @@ function DetailModal(props) {
                         <button>
                             Add to list
                         </button>
+                        <button onClick={() => toggleForm()}>
+                            Leave Review
+                        </button>
                     </div>
                     
                     <div id='modal-description'>
@@ -44,13 +80,29 @@ function DetailModal(props) {
                     <div className='modal-vote'>
                         <h1>Rating: {props.details.vote_average}</h1>
                     </div>
+
+                    <Form id='review-form' onSubmit={handleSubmit} show={show} onHide={() => showForm(false)}>
+                        <h1 className='review' >Review</h1>
+
+                    <Form.Group className="mb-3" controlId="formUsername">
+                        <Form.Label >Review Title</Form.Label>
+                    <Form.Control id='label-size' name="title" value={formData.title} onChange={handleInputChange} type="title" placeholder="Enter Review Title" />
+                    </Form.Group>
+                
+                    <Form.Group>
+                        <Form.Label>Type something</Form.Label>
+                        <Form.Control onChange={handleInputChange} name="comment" type="comment" placeholder="Review goes here"/>
+                    </Form.Group>
+                
+              <Button type="submit">Submit</Button>
+              
+            </Form>
+
                     <div className='modal-comments'>
                         {reviews.length > 0 &&
                         reviews.map(review => (
                             <div>
-                                {/* <div className="reviewpic">
-                                <img key={review.id} className="review_pic" src= {`${base_url}${review.poster_path}`} alt={review.title}/>
-                                </div> */}
+                            
                                 <div className="reviewcontent">
                                     <p>{review.title}</p>
                                     <p>{review.comment}</p>
