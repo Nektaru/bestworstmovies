@@ -1,5 +1,6 @@
 const router = require("express").Router()
 const User = require("../models/User.model")
+const isLoggedIn = require("../middleware/isLoggedIn")
 
 
 router.get("/allViewed", (req, res) => {
@@ -22,7 +23,7 @@ router.get("/allViewed/:id", (req, res) => {
 });
 
 // find user
-router.get("/:id", (req, res) => {
+router.get("/:id", isLoggedIn, (req, res) => {
   const { id } = req.params
 
   User.findById(id)
