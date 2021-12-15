@@ -46,11 +46,11 @@ function Row({ title, fetchUrl }) {
 
         <>
         <div id="modal-opts">
-        <Modal show={show} onHide={() => showModal(false)}>
+        <Modal show={show} onHide={() => showModal(false)} >
           <Modal.Header closeButton id='modal-header'>
             <Modal.Title id="modal-title">{details.title}</Modal.Title>
           </Modal.Header>
-          <Modal.Body id='modal-body'>
+          <Modal.Body id='modal-body' scrollable={true} >
             <DetailModal details={details}/>
           </Modal.Body>
 

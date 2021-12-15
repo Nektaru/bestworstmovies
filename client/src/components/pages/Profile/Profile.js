@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Form, Row, Col, Container, Button, Table } from "react-bootstrap";
+import { Form, Row, Col, Container, Button} from "react-bootstrap";
 import AuthServices from "../../../services/auth.services"
 import UserServices from "../../../services/user.services"
 import './Profile.css';
 import { Link } from "react-router-dom"
+
 
 const userServices = new UserServices();
 
@@ -40,7 +41,7 @@ const Profile = (props) => {
     e.preventDefault();
 
     setUserData(formData);
-  }
+  };
   
   
     return (
@@ -58,8 +59,13 @@ const Profile = (props) => {
                 </Form.Group>
                 
                   <Form.Group>
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control onChange={handleInputChange} name="password" required type="password" placeholder="Password"/>
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control onChange={handleInputChange} name="firstname" required type="firstname" placeholder="First Name"/>
+                  </Form.Group>
+
+                  <Form.Group>
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control onChange={handleInputChange} name="lastname" required type="lastname" placeholder="Last Name"/>
                   </Form.Group>
             
               <Button type="submit">Submit</Button>

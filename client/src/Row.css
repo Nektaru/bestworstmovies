@@ -43,6 +43,8 @@
 #modal-body {
     background-color: black;
     width: 50vw;
+    max-height: 'calc(100vh - 210px)';
+    overflow-y: auto;
 }
 
 
