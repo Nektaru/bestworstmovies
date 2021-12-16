@@ -42,24 +42,25 @@ User.findOneAndUpdate( id, userData, {new:true} )
   .catch(err => res.json({ err, errMessage: "Couldn't update user" }))
 })
 
-// TODO termina esta ruta para buscar por id e insertar el viewed al usuario 
+// adds a movie to the watch list of the user
 router.put("/viewed", (req, res) => {
-    const  id  = req.session.currentUser._id;
-    const { film } = req.body
+    const id  = req.session.currentUser._id;
+    const film = req.body
+    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>', film )
 
-  User.findOne({id: filmApiId})
+  User.findOne({film : film.filmApiId})
   .then(film => {
-
+    console.log('lo que encuentra', film)
   User.findByIdAndUpdate( id, { $push: {"films.viewed": film} })
     .then(updatedUserViewed => res.json(updatedUserViewed))
     .catch(err => res.json({ err, errMessage: "Can't watch this" }))
   })
 });
 
+// removes a viewed movie from the user
 router.put("/remove-viewed/:id", (req, res) => {
   const { id } = req.params
   const { film } = req.body
-  console.log(req.body)
 
 User.findByIdAndUpdate( id, { $pull: {"films.viewed": film} })
   .then(updatedUserViewed => res.json(updatedUserViewed))

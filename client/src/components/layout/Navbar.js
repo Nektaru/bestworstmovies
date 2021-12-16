@@ -21,8 +21,7 @@ function Navbar({currentUser, storeUser}) {
 
     const authService = new AuthService();
 
-    // crear una funcion que llamas en el onclick de logout y en la que llames al servicio y al metodo de logout y cuandoe so este hecho usas storeuser para ponerlo en null, por ejemplo
-    const laura = () => {
+    const logoutUser = () => {
         authService.logout()
         .then(() => {
             storeUser(null)
@@ -45,7 +44,7 @@ function Navbar({currentUser, storeUser}) {
                     <>
                         <Link to="/explore">Explore</Link>
                         <Link to="/mylist">My List</Link>
-                        <span onClick={laura}>Logout</span>
+                        <span onClick={logoutUser}>Logout</span>
                     </>
                     :
                     <>

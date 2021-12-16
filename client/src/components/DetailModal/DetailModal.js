@@ -47,8 +47,8 @@ const DetailModal = (props) => {
     };
 
     const addToList = () => {
-        userService.createViewed(formData.filmApiId)
-        // console.log('>>>>>',formData)
+        console.log('>>>>>>>>>>>>>>',formData)
+        userService.createViewed(formData)
     };
 
     const handleInputChange = (e) => {
