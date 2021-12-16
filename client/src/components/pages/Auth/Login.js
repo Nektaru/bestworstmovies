@@ -39,7 +39,7 @@ const Login = ({storeUser}) => {
               <Form id='login-container' onSubmit={handleSubmit}>
                   <h1 className='login'>Log in</h1>
                 <Form.Group className="mb-3" controlId="username">
-                  <Form.Label>Email address</Form.Label>
+                  <Form.Label>Username</Form.Label>
                   <Form.Control id='label-size' onChange={handleInputChange} value={formData.username} name="username" type="username" placeholder="Enter username" />
                 </Form.Group>
 

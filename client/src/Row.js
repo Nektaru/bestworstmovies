@@ -56,7 +56,7 @@ function Row({ title, fetchUrl }) {
         </div>
 
         <div className="row">
-            <h2>{title}</h2>
+            <h2 className="h2">{title}</h2>
 
             <div className="row_posters">
 

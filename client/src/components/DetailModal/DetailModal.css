@@ -28,17 +28,41 @@
     padding: 5px 20px;
 }
 
-.modal-comments p {
-    border: 1px white solid;
-    color: white;
-    width: 90%;  
-    margin-left: 20px;  
-}
-
 .modal-vote {
     color: white;
 }
 
 #modal-title h4{
     text-align: center;
+}
+
+#review-form {
+    color: white;
+    margin:0px 30px;
+
+}
+
+.review-labels {
+    display: flex;
+    flex-direction: column;
+    align-items: left
+}
+
+.review-submit {
+    margin:20px
+}
+
+#label-size {
+    width: 200px !important;
+}
+
+.mb-3 {
+    text-align: left;
+}
+
+
+.reviewcontent {
+    border: 1px solid white;
+    height: 80px !important;
+    padding: 10px;
 }

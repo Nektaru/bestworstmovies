@@ -90,19 +90,21 @@ const DetailModal = (props) => {
                     { show &&
                         
                     <Form id='review-form' onSubmit={handleSubmit}>
-                        <h1 className='review' >Review</h1>
-
+                        <h3 className='review' >Review</h3>
+                        
+                        <div className='review-labels'>
                     <Form.Group className="mb-3" controlId="formUsername">
                         <Form.Label >Review Title</Form.Label>
-                    <Form.Control id='label-size' name="title" value={formData.title} onChange={handleInputChange} type="title" placeholder="Enter Review Title" />
+                    <Form.Control id='label-size' name="title" value={formData.title} onChange={handleInputChange} type="title" placeholder="Title" />
                     </Form.Group>
                 
-                    <Form.Group>
+                    <Form.Group className='mb-3'>
                         <Form.Label>Type something</Form.Label>
                         <Form.Control onChange={handleInputChange} name="comment" type="comment" placeholder="Review goes here"/>
                     </Form.Group>
+                        </div>
                 
-              <Button type="submit">Submit</Button>
+              <Button className='review-submit' type="submit">Submit</Button>
               
             </Form>}
 
@@ -112,8 +114,8 @@ const DetailModal = (props) => {
                             <div>
                             
                                 <div className="reviewcontent">
-                                    <p>{review.title}</p>
-                                    <p>{review.comment}</p>
+                                    <p>Title: {review.title}</p>
+                                    <p>Comment: {review.comment}</p>
                                 </div>
                             </div>
                         ))}

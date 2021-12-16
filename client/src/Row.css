@@ -1,6 +1,5 @@
 .row {
     color: white;
-    margin-left: 20px;
 }
 
 .row_posters {
@@ -83,4 +82,8 @@ p {
 #everything {
     height: 100%;
     width: 100%;
+}
+
+.h2 {
+    margin-left: 30px;
 }
