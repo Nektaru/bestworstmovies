@@ -20,7 +20,7 @@
   },
  "scripts": {
     "start": "REACT_APP_BASE_URL=http://localhost:5005/api react-scripts start",
-    "build": "REACT_APP_BASE_URL=https://donuts-planet.herokuapp.com/api react-scripts build",
+    "build": "REACT_APP_BASE_URL=https://badflix-project.herokuapp.com/api react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
