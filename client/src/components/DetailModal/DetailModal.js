@@ -18,11 +18,17 @@ const DetailModal = (props) => {
         title: "",
         filmApiId: props.details.id
     });
+    const [viewedFilmsTitleArray, setViewedFilmsTitleArray] = useState([]);
+
 
     useEffect(() => getAllMovieReviews(), []);
 
+    useEffect(() => {
+        setViewedFilmsTitleArray(props.currentUser?.films.viewed.map(film => film.title))
+    }, [props?.currentUser]);
+
+
     const addReview = () => {
-    
         reviewService
             .createReview(formData)
             .then(response => {
@@ -31,7 +37,6 @@ const DetailModal = (props) => {
             .catch(err => console.log(err))
     }
 
-    // encuentra los reviews que se van a mostrar
     const getAllMovieReviews = () => {
         reviewService.getAllMovieReviews(props.details.id)
           .then(response => {
@@ -41,14 +46,32 @@ const DetailModal = (props) => {
           .catch(err => console.log(err))
       };
 
-    // abre el form para hacer nuevo review
-    const toggleForm = () => { 
+
+      const toggleForm = () => { 
         showForm(!show) 
     };
 
     const addToList = () => {
-        console.log('>>>>>>>>>>>>>>',formData)
-        userService.createViewed(formData)
+        if (!viewedFilmsTitleArray.includes(props.details.title)) {
+            userService.createViewed(formData)
+                .then(response => {
+                    const updatedUser = response.data
+                    props.storeUser(updatedUser)
+                })
+                .catch(err => console.log(err))
+        }
+    };
+
+    const removeFromList = () => {
+        if (viewedFilmsTitleArray.includes(props.details.title)) {
+            userService.removeViewed(formData)
+                .then(response => {
+                    const updatedUser = response.data
+                    props.storeUser(updatedUser)
+                    console.log('----------------------', updatedUser)
+                })
+                .catch(err => console.log(err))
+        }
     };
 
     const handleInputChange = (e) => {
@@ -71,9 +94,17 @@ const DetailModal = (props) => {
                     </div>
                 <div id='everything'>
                     <div className='modal-buttons'>
+                    {
+                        !viewedFilmsTitleArray.includes(props.details.title) ?
                         <Button onClick={addToList}>
                             Add to list
                         </Button>
+                        :
+                        <Button onClick={removeFromList}>
+                            Remove from list
+                        </Button>
+                    }
+                       
                         <Button onClick={toggleForm}>
                             Leave Review
                         </Button>
@@ -84,16 +115,15 @@ const DetailModal = (props) => {
                     </div>
                     
                     <div className='modal-vote'>
-                        <h1>Rating: {props.details.vote_average}</h1>
+                        <h2>Rating: {props.details.vote_average}</h2>
                     </div>
 
                     { show &&
                         
                     <Form id='review-form' onSubmit={handleSubmit}>
-                        <h3 className='review' >Review</h3>
-                        
-                        <div className='review-labels'>
-                    <Form.Group className="mb-3" controlId="formUsername">
+
+                    <div className="review-labels">    
+                    <Form.Group className="mb-1" controlId="formUsername">
                         <Form.Label >Review Title</Form.Label>
                     <Form.Control id='label-size' name="title" value={formData.title} onChange={handleInputChange} type="title" placeholder="Title" />
                     </Form.Group>
@@ -102,9 +132,9 @@ const DetailModal = (props) => {
                         <Form.Label>Type something</Form.Label>
                         <Form.Control onChange={handleInputChange} name="comment" type="comment" placeholder="Review goes here"/>
                     </Form.Group>
-                        </div>
+                    </div>
                 
-              <Button className='review-submit' type="submit">Submit</Button>
+              <Button className="review-submit" type="submit">Submit</Button>
               
             </Form>}
 
@@ -114,8 +144,12 @@ const DetailModal = (props) => {
                             <div>
                             
                                 <div className="reviewcontent">
-                                    <p>Title: {review.title}</p>
-                                    <p>Comment: {review.comment}</p>
+                                    <div className="review-title-div">
+                                    <p className="reviewTitle">Title: {review.title}</p>
+                                    </div>
+                                    <div className="review-body-div">
+                                    <p className="reviewBody">Review: {review.comment}</p>
+                                    </div>
                                 </div>
                             </div>
                         ))}

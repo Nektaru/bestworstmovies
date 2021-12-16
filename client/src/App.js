@@ -38,9 +38,9 @@ function App() {
          
       </>
       <Routes >
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home currentUser={currentUser} storeUser={storeUser}/>} />
           
-          <Route path="/explore" element={<Explore/>} />
+          <Route path="/explore" element={<Explore currentUser={currentUser} storeUser={storeUser}/>} />
 
           {/* <Route exact path="/profile" render={() => currentUser ? <Profile /> : <Navigate to="/login" />} /> */}
 

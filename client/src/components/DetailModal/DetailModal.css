@@ -1,7 +1,6 @@
 .image {
     width: 100%;
     height: 100%;
-    background-color: black;
     object-fit: cover;
 }
 
@@ -36,9 +35,29 @@
     text-align: center;
 }
 
+.reviewcontent {
+    display: flex;
+    flex-direction: column;
+    align-content: left;
+    justify-content: left;
+    border-bottom: 1px white solid;
+    color: white;
+    width: 90%;  
+    margin-left: 20px; 
+    margin-top: 5%;
+}
+
+.reviewTitle {
+    color: darkgrey;
+}
+
+.reviewBody {
+
+}
+
 #review-form {
     color: white;
-    margin:0px 30px;
+    margin: 10% 30px;
 
 }
 
@@ -60,9 +79,16 @@
     text-align: left;
 }
 
+.review-title-div {
+    display: flex;
+    justify-content: left;
+}
 
-.reviewcontent {
-    border: 1px solid white;
-    height: 80px !important;
-    padding: 10px;
+.review-body-div {
+    display: flex;
+    justify-content: left;
+}
+
+.modal-comments {
+    background-color: #181818;
 }

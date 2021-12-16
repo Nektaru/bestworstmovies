@@ -8,7 +8,7 @@ import DetailModal from './components/DetailModal/DetailModal';
 
 const base_url = "https://image.tmdb.org/t/p/original/"
 
-function Row({ title, fetchUrl }) {
+function Row({ title, fetchUrl, currentUser, storeUser }) {
     const [movies, setMovies] = useState([]);
 
     const [show, showModal] = useState(false);
@@ -49,7 +49,7 @@ function Row({ title, fetchUrl }) {
             <Modal.Title id="modal-title">{details.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body id='modal-body' scrollable={true} >
-            <DetailModal details={details}/>
+            <DetailModal details={details} currentUser={currentUser} storeUser={storeUser}/>
           </Modal.Body>
 
         </Modal>
@@ -61,11 +61,9 @@ function Row({ title, fetchUrl }) {
             <div className="row_posters">
 
                 {movies.map(movie => (
-                    <>
                     <img key={movie.id} className="row_poster" src= {`${base_url}${movie.poster_path}`} alt={movie.name}
                     onClick={() => toggle(movie)}
                      />
-                    </>
                 ))}
             </div>
         </div>
