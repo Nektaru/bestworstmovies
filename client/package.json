@@ -6,14 +6,21 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.24.0",
+    "bootstrap": "^5.1.3",
+    "movie-trailer": "^2.1.0",
+    "npm-auth": "^1.1.0",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.0.3",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
+    "react-youtube": "^7.13.1",
     "web-vitals": "^1.1.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+ "scripts": {
+    "start": "REACT_APP_BASE_URL=http://localhost:5005/api react-scripts start",
+    "build": "REACT_APP_BASE_URL=https://badflix-project.herokuapp.com/api react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

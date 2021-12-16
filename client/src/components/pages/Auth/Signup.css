@@ -1,0 +1,32 @@
+.h1 {
+    text-shadow: blanchedalmond;
+}
+
+#signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: center;
+    background-color: transparent;
+    color: #ffffff;
+    padding-top: 320px;
+
+}
+
+#signup-background {
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+}
+
+#label-size {
+    width: 300px;
+}
+
+.sign-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}

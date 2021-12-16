@@ -1,14 +1,18 @@
-const { Schema, Film} = require("mongose");
+const { Schema, model} = require("mongoose");
 
 const filmSchema = new Schema(
     {
     title: String,
-    poster: Image,
+    original_title: String,
+    id: Number,
+    adult: Boolean,
+    poster_path: String,
+    backdrop_path: String,
+    genre_ids: Number,
     cast: String,
-    rating: String,
-    images: String,
-    trailer: String,
-    pg: Number
+    vote_average: Number,
+    vote_count: Number,
+    overview: String,
    },
    {
    timestamps: true
@@ -17,5 +21,5 @@ const filmSchema = new Schema(
 
    const Film = model("Film", filmSchema)
 
-   module.export = Film;
+   module.exports = Film;
    

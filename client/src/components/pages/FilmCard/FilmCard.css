@@ -1,0 +1,36 @@
+.card-list {
+    padding-top: 80px;
+    padding-left: 70px;
+}
+
+.card-container {
+    padding-top: 5%;
+    padding-left: 5%;
+}
+.film-card {
+    width: 300px;
+    color: blanchedalmond;
+    background-color: red;
+}
+
+.card-img {
+    object-fit: contain;
+    width: 100%;
+    max-height: 500px;
+    margin-right: 10px;
+    transition: transform 150ms;
+}
+
+.card-img:hover {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.card-text {
+    padding-top: 5%;
+}
+
+#card {
+    background-color: transparent;
+}
+

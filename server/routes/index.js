@@ -1,10 +1,8 @@
-const router = require("express").Router();
+module.exports = app => {
+  app.use("/api/films", require("./film.routes"));
+  app.use("/api", require("./auth.routes"));
+  app.use("/api/reviews", require("./review.routes"));
+  app.use("/api/users", require("./user.routes"));
+}
 
-router.get("/", (req, res, next) => {
-  res.json("All good in here");
-});
 
-// You put the next routes here 👇
-// example: router.use("/auth", authRoutes)
-
-module.exports = router;

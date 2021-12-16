@@ -1,0 +1,61 @@
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    height: 70px;
+    z-index: 1;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.nav-black {
+    background-color: #111;
+}
+
+.nav-menu {
+    display: flex;
+    color: white;
+    padding-left: 150px;
+}
+
+.nav-left-buttons {
+    display: flex;
+}
+
+.nav-left-buttons a{
+    padding-left: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+}
+
+.nav-left-buttons span{
+    padding-left: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+}
+
+.nav-left-buttons span{
+    padding-left: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+}
+
+
+.nav-logo {
+    position: fixed;
+    left: 20px;
+    width: 100px;
+    object-fit: contain;
+}
+
+.nav-avatar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    object-fit: contain;
+}
