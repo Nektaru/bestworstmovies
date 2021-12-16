@@ -1,5 +1,6 @@
 const router = require("express").Router()
 const User = require("../models/User.model")
+const Film = require("../models/Film.model")
 const isLoggedIn = require("../middleware/isLoggedIn")
 
 
@@ -45,27 +46,31 @@ User.findOneAndUpdate( id, userData, {new:true} )
 // adds a movie to the watch list of the user
 router.put("/viewed", (req, res) => {
     const id  = req.session.currentUser._id;
-    const film = req.body
-    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>', film )
-
-  User.findOne({film : film.filmApiId})
+    const {filmApiId} = req.body
+    
+  Film.findOne({id: filmApiId})
   .then(film => {
-    console.log('lo que encuentra', film)
-  User.findByIdAndUpdate( id, { $push: {"films.viewed": film} })
-    .then(updatedUserViewed => res.json(updatedUserViewed))
-    .catch(err => res.json({ err, errMessage: "Can't watch this" }))
+    User.findByIdAndUpdate( id, { $push: {"films.viewed": film} }, {new:true})
+      .populate('films.viewed films.fav')
+      .then(updatedUserViewed => res.json(updatedUserViewed))
+      .catch(err => res.json({ err, errMessage: "Can't watch this" }))
   })
 });
 
 // removes a viewed movie from the user
-router.put("/remove-viewed/:id", (req, res) => {
-  const { id } = req.params
-  const { film } = req.body
-
-User.findByIdAndUpdate( id, { $pull: {"films.viewed": film} })
-  .then(updatedUserViewed => res.json(updatedUserViewed))
-  .catch(err => res.json({ err, errMessage: "Can't watch this" }))
+router.put("/remove-viewed", (req, res) => {
+  const id = req.session.currentUser._id
+  const { filmApiId } = req.body
+  console.log(id, "el del user", filmApiId, "el de la api")
+  Film.findOne({id: filmApiId})
+  .then(film => {
+    console.log('fiiiiiiiiiiiiiilm', film)
+    User.findByIdAndUpdate( id, { $pull: {"films.viewed": film._id} }, {new:true})
+      .populate('films.viewed films.fav')
+      .then(updatedUserViewed => res.json(updatedUserViewed))
+      .catch(err => res.json({ err, errMessage: "Can't delete this" }))
 })
+});
 
 router.delete("/deleteUser/:id", (req, res) => {
   const { id } = req.params

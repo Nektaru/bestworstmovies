@@ -30,7 +30,7 @@
 
 #modal-title {
     color: white;
-    background-color: black;
+    background-color: #181818 !important;
     text-align: center;
 }
 
@@ -47,6 +47,7 @@
 #modal-header {
     width: 100%;
     justify-content: space-around;
+    background-color: #181818 !important;
     
 }
 
@@ -69,7 +70,7 @@
 #modal-body {
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: #181818 !important;
 }
 
 p {

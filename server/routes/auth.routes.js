@@ -34,6 +34,7 @@ router.post('/login', (req, res) => {
 
   User
     .findOne({ username })
+    .populate('films.viewed films.fav')
     .then(user => {
 
       if (!user) {
