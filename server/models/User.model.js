@@ -26,7 +26,7 @@ const userSchema = new Schema(
         viewed: [{
             type: Schema.Types.ObjectId,
             ref: 'Film',
-            unique: true,
+            // unique: true,
         }]
     },
     role: {
@@ -42,6 +42,8 @@ const userSchema = new Schema(
    );
 
    const User = model("User", userSchema)
+
+   User.syncIndexes();
 
    module.exports = User;
 

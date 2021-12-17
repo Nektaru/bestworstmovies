@@ -45,6 +45,7 @@ const MyList = (props) => {
 
 
     return (
+    <div className="body">
       <div>
         <Modal show={show} onHide={() => showModal(false)}>
           <Modal.Header closeButton  id="modal-header">
@@ -70,6 +71,7 @@ const MyList = (props) => {
           </Row>
         </Container>
       </div>
+    </div>
     
         )
     

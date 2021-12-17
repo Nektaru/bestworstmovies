@@ -24,7 +24,7 @@ const DetailModal = (props) => {
     useEffect(() => getAllMovieReviews(), []);
 
     useEffect(() => {
-        setViewedFilmsTitleArray(props.currentUser?.films.viewed.map(film => film.title))
+        setViewedFilmsTitleArray(props.currentUser?.films?.viewed.map(film => film.title))
     }, [props?.currentUser]);
 
 
@@ -95,7 +95,7 @@ const DetailModal = (props) => {
                 <div id='everything'>
                     <div className='modal-buttons'>
                     {
-                        !viewedFilmsTitleArray.includes(props.details.title) ?
+                        !viewedFilmsTitleArray?.includes(props.details.title) ?
                         <Button onClick={addToList}>
                             Add to list
                         </Button>
@@ -141,8 +141,7 @@ const DetailModal = (props) => {
                     <div className='modal-comments'>
                         {reviews.length > 0 &&
                         reviews.map(review => (
-                            <div>
-                            
+                            <div key={review._id}>
                                 <div className="reviewcontent">
                                     <div className="review-title-div">
                                     <p className="reviewTitle">Title: {review.title}</p>

@@ -17,3 +17,8 @@
     text-align: center;
 }
 
+.body {
+    background-color: black;
+    height: 300vh;
+    width: 100%;
+}

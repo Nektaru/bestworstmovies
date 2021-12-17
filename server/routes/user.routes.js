@@ -50,11 +50,13 @@ router.put("/viewed", (req, res) => {
     
   Film.findOne({id: filmApiId})
   .then(film => {
-    User.findByIdAndUpdate( id, { $push: {"films.viewed": film} }, {new:true})
+    User.findByIdAndUpdate( id, { $push: {"films.viewed": film._id} }, {new:true})
       .populate('films.viewed films.fav')
-      .then(updatedUserViewed => res.json(updatedUserViewed))
-      .catch(err => res.json({ err, errMessage: "Can't watch this" }))
+      .then(updatedUserViewed => {
+        res.json(updatedUserViewed)})
+      .catch(err => res.status(500).json({ err, errMessage: "Can't watch this" }))
   })
+  .catch(err => res.status(500).json({ err, errMessage: "Can't find film" }))
 });
 
 // removes a viewed movie from the user
